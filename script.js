@@ -5,10 +5,8 @@ let zoomIn = document.getElementById('zoomIn');
 let zoomOut = document.getElementById('zoomOut');
 let del = document.getElementById('delete');
 let img = document.getElementById('image');
-
+let imgBlock = document.getElementById('img-block');
 let scale = 1;
-let fifthFlag = false;
-let sixthFlag = false;
 
 const findRandomColour = () => {
   const letters ="0123456789ABCDEF";
@@ -17,38 +15,41 @@ const findRandomColour = () => {
     color += letters[Math.floor(Math.random()*16)];
   }
   return `#${color}`;
-}
+};
 
 const changeColour = (el, backCol, textCol) => {
   el.style.backgroundColor = backCol;
   el.style.color = textCol;
-}
+};
 
 fifth.addEventListener('click', () => {
   changeColour(fifth, findRandomColour(), findRandomColour())
-})
+});
 
 sixth.addEventListener('click', () => {
   changeColour(sixth, findRandomColour(), findRandomColour())
-})
+});
 
 add.addEventListener('click', () => {
-
-})
+  img.style.display = 'block';
+  imgBlock.style.display = 'block';
+});
 
 zoomIn.addEventListener('click', () => {
   if(scale < 1.5) {
-    scale += 0.1
+    scale += 0.1;
     img.style.transform = `scale(${scale})`
   }
-})
+});
 
 zoomOut.addEventListener('click', () => {
   if(scale > 0.75) {
-    scale -= 0.1
+    scale -= 0.1;
     img.style.transform = `scale(${scale})`
   }
-})
+});
 
-del.addEventListener('click', () => img.style.display = 'none')
-
+del.addEventListener('click', () => {
+  img.style.display = 'none';
+  imgBlock.style.display = 'none';
+});
