@@ -31,7 +31,6 @@ sixth.addEventListener('click', () => {
 });
 
 add.addEventListener('click', () => {
-  img.style.display = 'block';
   imgBlock.style.display = 'block';
 });
 
@@ -50,6 +49,5 @@ zoomOut.addEventListener('click', () => {
 });
 
 del.addEventListener('click', () => {
-  img.style.display = 'none';
   imgBlock.style.display = 'none';
 });
